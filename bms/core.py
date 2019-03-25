@@ -16,7 +16,7 @@ from scipy.optimize import fsolve, root, minimize
 #import cma
 
 
-class Variable:
+class Variable(object):
     """ Defines a variable
 
     :param names: Defines full name and short name.
@@ -93,7 +93,7 @@ class Signal(Variable):
         pass
 
 
-class Block:
+class Block(object):
     """ Abstract class of block: this class should not be instanciate directly
     """
 
