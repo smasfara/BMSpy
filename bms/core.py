@@ -16,7 +16,7 @@ from scipy.optimize import fsolve, root, minimize
 #import cma
 
 
-class Variable:
+class Variable(object):
     """ Defines a variable
 
     :param names: Defines full name and short name.
@@ -93,7 +93,7 @@ class Signal(Variable):
         pass
 
 
-class Block:
+class Block(object):
     """ Abstract class of block: this class should not be instanciate directly
     """
 
@@ -176,7 +176,7 @@ class ModelError(Exception):
         return 'Model Error: '+self.message
 
 
-class DynamicSystem:
+class DynamicSystem(object):
     """
     Defines a dynamic system that can simulate itself
 
@@ -557,7 +557,7 @@ def Load(file):
         return model
 
 
-class PhysicalNode:
+class PhysicalNode(object):
     """
     Abstract class
     """
@@ -571,7 +571,7 @@ class PhysicalNode:
         self.variable = Variable(potential_variable_name+' '+node_name)
 
 
-class PhysicalBlock:
+class PhysicalBlock(object):
     """
     Abstract class to inherit when coding a physical block
     """
@@ -586,7 +586,7 @@ class PhysicalBlock:
                                    physical_nodes[inode].name+' to '+self.name) for inode in nodes_with_fluxes]
 
 
-class PhysicalSystem:
+class PhysicalSystem(object):
     """
     Defines a physical system
     """
